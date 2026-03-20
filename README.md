@@ -12,10 +12,9 @@ Features
 
 SCREENSHOTS
 
-<p align="center">
-  <img src="https://postimg.cc/PPpqngvy" width="300" title="QR Code App Preview1">
-  <img src="https://postimg.cc/crgJGptF" width="300" title="QR Code App Preview2">
-</p>
+[![Screenshot_2026_03_21_005616.png](https://i.postimg.cc/65z4nw9k/Screenshot_2026_03_21_005616.png)](https://postimg.cc/PPpqngvy)
+[![Screenshot_2026_03_21_005637.png](https://i.postimg.cc/SNVYCqSb/Screenshot_2026_03_21_005637.png)](https://postimg.cc/crgJGptF)
+
 
 Tech Stack
 
