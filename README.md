@@ -10,6 +10,13 @@ Features
 -Responsive Design: Works seamlessly on desktop and mobile.
 
 
+SCREENSHOTS
+
+<p align="center">
+  <img src="https://postimg.cc/PPpqngvy" width="300" title="QR Code App Preview1">
+  <img src="https://postimg.cc/crgJGptF" width="300" title="QR Code App Preview2">
+</p>
+
 Tech Stack
 
 Frontend: HTML5, CSS3, JavaScript
