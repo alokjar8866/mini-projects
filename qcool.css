@@ -1,100 +1,128 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
-body{
+body {
+    background: #121417; /* Deeper dark for better contrast */
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header fix - No longer overlaps */
+.heading {
+    width: 100%;
+    background-color: #1c1f23;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 2px solid #494eea; /* Accent color */
+}
+
+.heading h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.marker {
+    background-color: blue;
+    padding: 4px 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(73, 78, 234, 0.4);
+}
+
+/* Wrapper to handle centering without 'fixed' */
+.main-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
     background: #262a2f;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    text-align: center;
 }
 
-.container{
-    width: 400px;
-    padding: 25px 35px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background: gray;
-    border-radius: 10px;
-
+.container p {
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #cbd5e0;
 }
 
-.container p{
-    font-weight: 600;
-    font-size: 15px;
-    margin-bottom: 8px;
-
-}
-
-.container input{
+.container input {
     width: 100%;
     height: 50px;
-    border: 1px solid #494eea;
+    background: #121417;
+    border: 1px solid #4a5568;
     outline: 0;
     padding: 10px;
-    margin: 10px 0 20px;
-    border-radius: 5px;  
-    
+    color: white;
+    border-radius: 8px;
+    transition: border 0.3s;
 }
 
-.container button{
+.container input:focus {
+    border-color: #494eea;
+}
+
+.container button {
     width: 100%;
     height: 50px;
-    background: #494eea;
+    background: navy;
     color: #fff;
     border: 0;
-    outline: 0;
-    border-radius: 5px;
-    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
     cursor: pointer;
-    margin: 20px 0;
-    font-weight: 500;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
 }
 
-#imgBox{
-    width: 200px;
-    border-radius: 5px;
+.container button:hover {
+    background: blue;
+    transform: translateY(-2px);
+}
+
+/* QR Box Animation */
+#imgBox {
+    width: 180px;
+    border-radius: 8px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 1s;
+    transition: max-height 0.5s, margin 0.5s;
+    margin: 0 auto;
+    background: white; /* Contrast for the QR code */
 }
 
-#imgBox img{
-    width: 100%;
+#imgBox.show-img {
+    max-height: 200px;
+    margin: 25px auto;
     padding: 10px;
-
 }
 
-
-#imgBox.show-img{
-    max-height: 300px;
-    margin: 10px auto;
-    border: 1px solid #d1d1d1;
-
+#imgBox img {
+    width: 100%;
 }
 
-.error{
-    animation: shake 0.1s linear 10;
-
+/* Error Shake */
+.error {
+    border-color: #ff4d4d !important;
+    animation: shake 0.2s linear 3;
 }
 
-@keyframes shake{
-    0%{
-        transform: translateX(0);
-    }
-    25%{
-        transform: translateX(-2px);
-    }
-   50%{
-        transform: translateX(0);
-    }
-    75%{
-        transform: translateX(2px);
-    }
-    100%{
-        transform: translateX(0);
-    }
-
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
 }

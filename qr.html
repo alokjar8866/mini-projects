@@ -3,49 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR code Generator</title>
+    <title>QR Code Generator</title>
     <link rel="stylesheet" href="qcool.css">
 </head>
 <body>
-    <div class="container">
-        <p>Enter Your Text or URL</p>
-        <input type="text" placeholder="Text or URL" id="qrText">
 
-        <div id="imgBox">
-            <img src="" id="qrImage">
+    <header class="heading">
+        <h1>TEXT TO <span class="marker">QR CODE</span> GENERATOR</h1>
+    </header>
 
+    <main class="main-wrapper">
+        <div class="container">
+            <p>Enter Your Text or URL</p>
+            <input type="text" placeholder="https://google.com" id="qrText">
+
+            <div id="imgBox">
+                <img src="" id="qrImage" alt="Generated QR Code">
+            </div>
+
+            <button onclick="genz()">Generate QR Code</button>
         </div>
+    </main>
 
-        <button onclick="genz()">Generate QR Code</button>
-
-    </div>
     <script>
+        let imgBox = document.getElementById("imgBox");
+        let qrImage = document.getElementById("qrImage");
+        let qrText = document.getElementById("qrText");
 
-        let imgBox=document.getElementById("imgBox");
-        let qrImage=document.getElementById("qrImage");
-        let qrText=document.getElementById("qrText");
-
-       
-       
-        function genz(){
-
-            if(qrText.value.length > 0)
-            {
-                qrImage.src="https://api.qrserver.com/v1/create-qr-code/?size=150*150&data=" + qrText.value;
-            imgBox.classList.add("show-img")
-            }
-            else{
+        function genz() {
+            if (qrText.value.trim().length > 0) {
+                // Using trim() to avoid empty spaces
+                qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(qrText.value);
+                imgBox.classList.add("show-img");
+            } else {
                 qrText.classList.add('error');
-                setTimeout(()=>{
+                setTimeout(() => {
                     qrText.classList.remove('error');
-                },1000);
+                }, 500);
             }
-           
         }
-
-
-
     </script>
-
-</body> 
+</body>
 </html>
