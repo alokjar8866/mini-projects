@@ -60,3 +60,4 @@ cd qrcode
 3. **Run the project**
 Simply open in browser:
 Just double click `qr.html` - no server needed!
+---
